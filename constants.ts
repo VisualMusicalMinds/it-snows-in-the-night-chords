@@ -20,31 +20,31 @@ const B4 = 493.88;
 const CHORD_Em: Chord = {
   name: 'Em',
   notes: [E4, G4, B4], // Revoiced to E4 octave
-  color: 'bg-yellow-500', // Brighter Golden Yellow
+  color: 'chord-yellow',
 };
 
 const CHORD_C: Chord = {
   name: 'C',
   notes: [C4, E4, G4], // Root position C major
-  color: 'bg-red-600', // Red
+  color: 'chord-red',
 };
 
 const CHORD_D: Chord = {
   name: 'D',
   notes: [D4, F_SHARP_4, A4], // Root position D major
-  color: 'bg-orange-500', // Orange
+  color: 'chord-orange',
 };
 
 const CHORD_Am: Chord = {
   name: 'Am',
   notes: [A3, C4, E4], // Root position A minor
-  color: 'bg-blue-600', // Blue
+  color: 'chord-blue',
 };
 
 const CHORD_G: Chord = {
   name: 'G',
   notes: [G3, B3, D4], // Root position G major (Octave 3)
-  color: 'bg-teal-500', // Turquoise
+  color: 'chord-teal',
 };
 
 // Set 1: Em/C, Em/C, D/Am, D/Em

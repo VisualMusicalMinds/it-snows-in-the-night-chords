@@ -1,0 +1,183 @@
+:root {
+  --color-yellow: #eab308;
+  --color-red: #dc2626;
+  --color-orange: #f97316;
+  --color-blue: #2563eb;
+  --color-teal: #14b8a6;
+  --color-white: #ffffff;
+  --color-gray-200: #e5e7eb;
+}
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--color-white);
+  color: #0f172a;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+.no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.app-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.7s ease;
+  opacity: 0;
+}
+
+.app-container.ready {
+  opacity: 1;
+}
+
+.main-content {
+  width: 100%;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chord-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  width: 100%;
+  margin-bottom: 0.75rem;
+}
+
+/* SplitButton Styles */
+.split-button-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s;
+  user-select: none;
+}
+
+.split-button-wrapper:hover {
+  transform: translateY(-0.25rem);
+}
+
+.split-button-inner {
+  position: relative;
+  height: 6rem;
+  width: 100%;
+  display: flex;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+}
+
+@media (min-width: 768px) {
+  .split-button-inner {
+    height: 8rem;
+  }
+}
+
+.chord-button {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.1s ease-out;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  touch-action: none;
+}
+
+.chord-button:hover {
+  filter: brightness(1.1);
+}
+
+.chord-button.active {
+  filter: brightness(1.25);
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+.chord-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-white);
+  filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .chord-text {
+    font-size: 1.875rem;
+  }
+}
+
+.separator {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 20;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
+
+/* Color Classes */
+.chord-yellow { background-color: var(--color-yellow); }
+.chord-red { background-color: var(--color-red); }
+.chord-orange { background-color: var(--color-orange); }
+.chord-blue { background-color: var(--color-blue); }
+.chord-teal { background-color: var(--color-teal); }
+
+/* Toggle Button Styles */
+.toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  transition: transform 0.1s;
+}
+
+.toggle-btn:active {
+  transform: scale(0.95);
+}
+
+.toggle-indicator {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 9999px;
+  border: 2px solid var(--color-blue);
+  transition: background-color 0.3s;
+}
+
+.toggle-indicator.active {
+  background-color: var(--color-blue);
+}
+
+.toggle-indicator.inactive {
+  background-color: transparent;
+}
